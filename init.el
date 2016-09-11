@@ -116,6 +116,9 @@
 
 (require 'dockerfile-mode)
 
+(require 'xcscope)
+(cscope-setup)
+
 
 ;;;;;;;;;;;;;;
 ;; non-elpa ;;
