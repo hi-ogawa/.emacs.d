@@ -26,4 +26,13 @@
   (shell-command
     (concat "echo " (read-passwd "Password: ") " | sudo -S " command)))
 
+(require 'package)
+(require 'cl)
+(defun my-save-package-list ()
+  "save the list of current packages to `package_list` for bootstrap.el"
+  (interactive)
+  (with-temp-file "~/.emacs.d/package_list"
+    (insert (pp-to-string (remove-duplicates package-activated-list)))))
+(advice-add 'package-install :after (lambda (pkg) (my-save-package-list)))
+
 (provide 'my)
