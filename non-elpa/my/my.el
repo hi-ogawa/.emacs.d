@@ -1,3 +1,15 @@
+(defun my-string-match (regex str n)
+  "https://www.emacswiki.org/emacs/ElispCookbook#toc34"
+  (interactive)
+  (save-match-data
+    (progn (string-match regex str)
+           (match-string n str))))
+
+(defun my-dirname (path)
+  "elisp version of dirname(1)"
+  (interactive)
+  (my-string-match "\\([^/]*\\)/?$" path 1))
+
 (defun my-open-shell-shortcut (buffername)
   "open emacs shell with default buffername"
   (interactive
