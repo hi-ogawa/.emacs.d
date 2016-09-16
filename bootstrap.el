@@ -1,4 +1,4 @@
-;; Install elpa dependencies at once (run M-x eval-current-buffer)
+;; Install elpa dependencies at once
 
 (require 'package)
 (package-initialize)
