@@ -13,7 +13,11 @@
 (defun my-open-shell-shortcut (buffername)
   "open emacs shell with default buffername"
   (interactive
-    (list (read-string "buffer name: " "*shell*-" nil "*shell*-")))
+    (list
+      (read-string
+        "buffer name: "
+        (concat "*shell*-" (my-dirname (expand-file-name default-directory)))
+        nil nil)))
   (shell buffername))
 
 ;; http://emacswiki.org/emacs/DeletingWhitespace#toc3
