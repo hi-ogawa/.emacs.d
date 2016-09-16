@@ -1,0 +1,8 @@
+version: "2"
+
+services:
+  emacs:
+    build: ./
+    command: emacs --batch --script ~/.emacs.d/bootstrap.el
+    volumes:
+      - ../:/root/.emacs.d
