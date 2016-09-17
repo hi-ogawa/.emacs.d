@@ -147,5 +147,9 @@
 
 (global-set-key (kbd "M-m") (lambda () (interactive) (call-interactively 'man)))
 
+(add-hook 'dired-mode-hook
+  (lambda ()
+    (local-set-key (kbd "-") 'dired-up-directory)))
+
 ;; ruby
 (setq ruby-insert-encoding-magic-comment nil)
