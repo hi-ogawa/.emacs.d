@@ -76,6 +76,9 @@
 	  (lambda ()
             (local-set-key (kbd "M-r") 'helm-comint-input-ring)))
 
+(require 'helm-swoop)
+(global-set-key (kbd "C-; C-s") 'helm-swoop)
+
 ;; projectile
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)

@@ -1,1 +1,1 @@
-(coffee-mode dired-subtree dired-hacks-utils dockerfile-mode edit-server elscreen go-mode helm helm-core magit git-commit magit-popup popup projectile pkg-info epl transpose-frame web-mode with-editor dash async xcscope yaml-mode)
+(helm-swoop coffee-mode dired-subtree dired-hacks-utils dockerfile-mode edit-server elscreen go-mode helm helm-core magit git-commit magit-popup popup projectile pkg-info epl transpose-frame web-mode with-editor dash async xcscope yaml-mode)
