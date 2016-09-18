@@ -118,6 +118,7 @@
 (global-set-key (kbd "C-; g") 'magit-status)
 
 (require 'dockerfile-mode)
+(require 'docker-tramp)
 
 (require 'xcscope)
 (cscope-setup)
