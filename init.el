@@ -149,7 +149,7 @@
 (global-set-key (kbd "M-P")          'cua-scroll-down)
 
 (global-set-key (kbd "M-m") (lambda () (interactive) (call-interactively 'man)))
-(global-set-key (kbd "C-; C-q") (lambda () (interactive) (shell-command "gnome-terminal")))
+(global-set-key (kbd "C-; C-l") (lambda () (interactive) (shell-command "gnome-terminal")))
 (global-set-key (kbd "C-; C-b") 'browse-url)
 
 (add-hook 'dired-mode-hook
