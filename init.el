@@ -123,6 +123,7 @@
 (require 'xcscope)
 (cscope-setup)
 
+(require 'slim-mode)
 
 ;;;;;;;;;;;;;;
 ;; non-elpa ;;
