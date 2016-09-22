@@ -154,6 +154,7 @@
 (global-set-key (kbd "M-m") (lambda () (interactive) (call-interactively 'man)))
 (global-set-key (kbd "C-; C-l") (lambda () (interactive) (shell-command "gnome-terminal")))
 (global-set-key (kbd "C-; C-b") 'browse-url)
+(global-set-key (kbd "C-; C-o") 'pop-to-mark-command)
 
 (add-hook 'dired-mode-hook
   (lambda ()
