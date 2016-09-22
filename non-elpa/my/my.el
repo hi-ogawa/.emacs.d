@@ -42,6 +42,18 @@
   (shell-command
     (concat "echo " (read-passwd "Password: ") " | sudo -S " command)))
 
+(defun my-mark-thing-at-point (thing)
+  (letrec
+    ((bnd (bounds-of-thing-at-point thing))
+     (start (car bnd))
+     (end (cdr bnd)))
+    (set-mark start)
+    (goto-char end)))
+
+(defun my-mark-symbol-at-point ()
+  (interactive)
+  (my-mark-thing-at-point 'symbol))
+
 (require 'package)
 (require 'cl)
 (require 'dash)
