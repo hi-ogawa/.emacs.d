@@ -44,11 +44,19 @@
 
 (require 'package)
 (require 'cl)
+(require 'dash)
 (defun my-save-package-list ()
   "save the list of current packages to `package_list` for bootstrap.el"
   (interactive)
   (with-temp-file "~/.emacs.d/package_list"
-    (insert (pp-to-string (remove-duplicates package-activated-list)))))
+    (insert
+      (pp-to-string
+        (-sort
+          (lambda (p q) (string< (car p) (car q)))
+          package-alist)))))
+
 (advice-add 'package-install :after (lambda (pkg) (my-save-package-list)))
+(advice-add 'package-delete :after (lambda (pkg) (my-save-package-list)))
+
 
 (provide 'my)

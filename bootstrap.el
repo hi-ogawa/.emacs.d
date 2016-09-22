@@ -6,7 +6,9 @@
 (package-refresh-contents)
 
 (require 'cl)
-(mapcar 'package-install
-  (with-temp-buffer
-    (insert-file-contents "~/.emacs.d/package_list")
-    (car (read-from-string (buffer-string)))))
+(mapcar
+  'package-install
+  (mapcar 'car
+    (with-temp-buffer
+      (insert-file-contents "~/.emacs.d/package_list")
+      (car (read-from-string (buffer-string))))))
