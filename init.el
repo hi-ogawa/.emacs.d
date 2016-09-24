@@ -82,6 +82,7 @@
 ;; projectile
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
+(setq projectile-enable-caching t)
 
 ;; dired-hacks-utils, dired-subtree
 (define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
