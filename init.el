@@ -49,6 +49,15 @@
 
 (server-start)
 
+;; https://www.emacswiki.org/emacs/GlobalTextScaleMode
+(require 'face-remap)
+(setq text-scale-mode-step 1.1)
+(define-global-minor-mode global-text-scale-mode text-scale-mode
+  (lambda ()
+    (text-scale-mode t)
+    (text-scale-set -1)))
+(global-text-scale-mode t)
+
 
 ;;;;;;;;;;
 ;; elpa ;;
