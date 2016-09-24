@@ -54,6 +54,13 @@
   (interactive)
   (my-mark-thing-at-point 'symbol))
 
+(defun my-google-symbol-at-point ()
+  (interactive)
+  (shell-command
+    (concat
+      "xdg-open https://www.google.co.jp/search?q="
+      (thing-at-point 'symbol))))
+
 (require 'package)
 (require 'cl)
 (require 'dash)

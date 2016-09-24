@@ -140,6 +140,7 @@
     (local-set-key (kbd "C-c C-o") 'my-open-from-dired)))
 (global-set-key (kbd "C-; M-!") 'my-sudo-shell-command)
 (global-set-key (kbd "C-; RET") 'my-mark-symbol-at-point)
+(global-set-key (kbd "C-; C-e") 'my-google-symbol-at-point)
 
 
 ;;;;;;;;;;;;
