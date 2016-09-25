@@ -98,6 +98,16 @@
 (require 'dired-subtree)
 (require 'dired-filter)
 (define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
+(define-key dired-mode-map (kbd "<mouse-2>")
+  (lambda () (interactive)
+    (if (dired-utils-is-dir-p)
+      (dired-subtree-toggle)
+      (progn
+        (delete-other-windows)
+        (let ((new-window (split-window-right (/ (window-width) 4)))
+              (file-to-visit (dired-get-filename)))
+          (select-window new-window)
+          (find-file file-to-visit))))))
 
 ;; transpose-frame
 (require 'transpose-frame)
