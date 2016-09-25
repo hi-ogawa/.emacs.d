@@ -169,6 +169,7 @@
 
 (add-hook 'dired-mode-hook
   (lambda ()
+    (dired-hide-details-mode)
     (local-set-key (kbd "-") 'dired-up-directory)))
 
 ;; ruby
