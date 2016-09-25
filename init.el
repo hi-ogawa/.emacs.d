@@ -76,6 +76,21 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (local-set-key "\C-z\C-o" (lambda () (interactive) (elscreen-find-file (dired-get-filename))))))
+;; show tab menu in title: https://www.emacswiki.org/emacs/EmacsLispScreen#toc8
+(setq elscreen-display-tab nil)
+(defun pp-screen-name (screen-num)
+  (concat (if (= screen-num (elscreen-get-current-screen)) "+" "_")
+          (elscreen-save-screen-excursion
+            (elscreen-goto-internal screen-num)
+            (buffer-name (window-buffer)))))
+(defun elscreen-frame-title-update ()
+  "https://www.emacswiki.org/emacs/EmacsLispScreen#toc8"
+  (when (elscreen-screen-modified-p 'elscreen-frame-title-update)
+    (let ((title (mapconcat 'pp-screen-name
+                            (sort (elscreen-get-screen-list) '<)
+                            "  |  ")))
+        (set-frame-name title))))
+(add-hook 'elscreen-screen-update-hook 'elscreen-frame-title-update)
 
 ;; helm
 (require 'helm-config)
