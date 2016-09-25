@@ -98,10 +98,6 @@
 (require 'dired-subtree)
 (require 'dired-filter)
 (define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
-(add-hook 'dired-mode-hook
-          (lambda ()
-	    (dired-hide-details-mode)
-            (local-set-key "i" (lambda () (interactive) (dired-subtree-toggle) (revert-buffer)))))
 
 ;; transpose-frame
 (require 'transpose-frame)
