@@ -93,7 +93,10 @@
 (setq projectile-completion-system 'helm)
 (setq projectile-enable-caching t)
 
-;; dired-hacks-utils, dired-subtree
+;; dired-hacks-utils, dired-subtree, dired-filter
+(require 'dired-hacks-utils)
+(require 'dired-subtree)
+(require 'dired-filter)
 (define-key dired-mode-map (kbd "i") 'dired-subtree-toggle)
 (add-hook 'dired-mode-hook
           (lambda ()

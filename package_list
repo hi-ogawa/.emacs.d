@@ -23,6 +23,21 @@
                           "A modern list library for Emacs" nil nil nil "/home/hiogawa/.emacs.d/elpa/dash-20160820.501"
                           ((:keywords "lists"))
                           nil])
+ (dired-filter
+  [cl-struct-package-desc dired-filter
+                          (20160526 1336)
+                          "Ibuffer-like filtering for dired"
+                          ((dash
+                            (2 10 0))
+                           (dired-hacks-utils
+                            (0 0 1))
+                           (f
+                            (0 17 0))
+                           (cl-lib
+                            (0 3)))
+                          nil nil "/home/hiogawa/.emacs.d/elpa/dired-filter-20160526.1336"
+                          ((:keywords "files"))
+                          nil])
  (dired-hacks-utils
   [cl-struct-package-desc dired-hacks-utils
                           (20160527 1436)
@@ -78,6 +93,18 @@
                           nil nil "/home/hiogawa/.emacs.d/elpa/epl-20150517.433"
                           ((:keywords "convenience")
                            (:url . "http://github.com/cask/epl"))
+                          nil])
+ (f
+  [cl-struct-package-desc f
+                          (20160909 829)
+                          "Modern API for working with files and directories"
+                          ((s
+                            (1 7 0))
+                           (dash
+                            (2 2 0)))
+                          nil nil "/home/hiogawa/.emacs.d/elpa/f-20160909.829"
+                          ((:keywords "files" "directories")
+                           (:url . "http://github.com/rejeep/f.el"))
                           nil])
  (git-commit
   [cl-struct-package-desc git-commit
@@ -200,6 +227,12 @@
                           nil nil "/home/hiogawa/.emacs.d/elpa/projectile-20160830.138"
                           ((:keywords "project" "convenience")
                            (:url . "https://github.com/bbatsov/projectile"))
+                          nil])
+ (s
+  [cl-struct-package-desc s
+                          (20160922 443)
+                          "The long lost Emacs string manipulation library." nil nil nil "/home/hiogawa/.emacs.d/elpa/s-20160922.443"
+                          ((:keywords "strings"))
                           nil])
  (slim-mode
   [cl-struct-package-desc slim-mode
