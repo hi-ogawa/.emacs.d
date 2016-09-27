@@ -192,6 +192,9 @@
 (global-set-key (kbd "C-; C-l") (lambda () (interactive) (shell-command "gnome-terminal")))
 (global-set-key (kbd "C-; C-b") 'browse-url)
 (global-set-key (kbd "C-; C-o") 'pop-to-mark-command)
+(global-set-key (kbd "C-; C-a")
+                (lambda (arg) (interactive "Mopen in atom: ")
+                  (call-process-shell-command (concat "atom " arg))))
 
 (add-hook 'dired-mode-hook
   (lambda ()
