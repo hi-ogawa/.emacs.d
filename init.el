@@ -69,6 +69,9 @@
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
+(require 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+
 ;; elscreen
 (elscreen-start)
 (global-set-key (kbd "<C-tab>")         'elscreen-next)

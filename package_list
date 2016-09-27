@@ -94,6 +94,13 @@
                           ((:keywords "convenience")
                            (:url . "http://github.com/cask/epl"))
                           nil])
+ (exec-path-from-shell
+  [cl-struct-package-desc exec-path-from-shell
+                          (20160812 159)
+                          "Get environment variables such as $PATH from the shell" nil nil nil "/Users/hiogawa/.emacs.d/elpa/exec-path-from-shell-20160812.159"
+                          ((:keywords "environment")
+                           (:url . "https://github.com/purcell/exec-path-from-shell"))
+                          nil])
  (f
   [cl-struct-package-desc f
                           (20160909 829)
