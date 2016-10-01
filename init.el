@@ -47,7 +47,8 @@
 (require 'warnings)
 (add-to-list 'warning-suppress-types '(undo discard-info))
 
-(server-start)
+(require 'server)
+(when (not (server-running-p)) (server-start))
 
 ;; https://www.emacswiki.org/emacs/GlobalTextScaleMode
 (require 'face-remap)
