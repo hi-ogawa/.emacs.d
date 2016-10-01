@@ -247,6 +247,12 @@
                           "Transpose windows arrangement in a frame" nil nil nil "/home/hiogawa/.emacs.d/elpa/transpose-frame-20151126.626"
                           ((:keywords "window"))
                           nil])
+ (w3m
+  [cl-struct-package-desc w3m
+                          (20160927 633)
+                          "an Emacs interface to w3m" nil nil nil "/home/hiogawa/.emacs.d/elpa/w3m-20160927.633"
+                          ((:keywords "w3m" "www" "hypermedia"))
+                          nil])
  (web-mode
   [cl-struct-package-desc web-mode
                           (20160904 1151)
