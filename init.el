@@ -42,6 +42,12 @@
 (setq mouse-wheel-progressive-speed nil)            ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't)                  ;; scroll window under mouse
 (setq scroll-step 1)                                ;; keyboard scroll one line at a time
+(global-set-key (kbd "<triple-mouse-6>")
+                (lambda () (interactive)
+                  (scroll-right 1)))
+(global-set-key (kbd "<triple-mouse-7>")
+                (lambda () (interactive)
+                  (scroll-left 1)))
 
 ;; suppress warning when huge outputs on shell
 (require 'warnings)
