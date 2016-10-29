@@ -59,6 +59,7 @@
     (text-scale-set -1)))
 (global-text-scale-mode t)
 
+(setq lazy-highlight-cleanup nil)
 
 ;;;;;;;;;;
 ;; elpa ;;
