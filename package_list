@@ -17,6 +17,13 @@
                           ((:keywords "coffeescript" "major" "mode")
                            (:url . "http://github.com/defunkt/coffee-mode"))
                           nil])
+ (csharp-mode
+  [cl-struct-package-desc csharp-mode
+                          (20160909 1316)
+                          "C# mode derived mode" nil nil nil "/home/hiogawa/.emacs.d/elpa/csharp-mode-20160909.1316"
+                          ((:keywords "c#" "languages" "oop" "mode")
+                           (:url . "https://github.com/josteink/csharp-mode"))
+                          nil])
  (dash
   [cl-struct-package-desc dash
                           (20160820 501)
@@ -126,6 +133,12 @@
                           "Major mode for the Go programming language" nil nil nil "/home/hiogawa/.emacs.d/elpa/go-mode-20160913.944"
                           ((:keywords "languages" "go")
                            (:url . "https://github.com/dominikh/go-mode.el"))
+                          nil])
+ (groovy-mode
+  [cl-struct-package-desc groovy-mode
+                          (20160504 211)
+                          "Major mode for Groovy source files" nil nil nil "/home/hiogawa/.emacs.d/elpa/groovy-mode-20160504.211"
+                          ((:keywords "languages"))
                           nil])
  (helm
   [cl-struct-package-desc helm
