@@ -34,7 +34,7 @@
   "open a file above the cursor in dired-mode"
   (interactive)
   (save-window-excursion
-    (shell-command (concat "xdg-open \"" (dired-filename-at-point) "\""))))
+    (shell-command (concat "xdg-open \"" (dired-get-filename nil t) "\""))))
 
 ;; thanks to http://stackoverflow.com/questions/2472273/how-do-i-run-a-sudo-command-in-emacs
 (defun my-sudo-shell-command (command)
