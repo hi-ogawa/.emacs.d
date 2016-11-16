@@ -10,14 +10,21 @@
   (interactive)
   (my-string-match "\\([^/]*\\)/?$" path 1))
 
+(require 'f)
+(require 'gnus-util)
 (defun my-open-shell-shortcut (buffername)
   "open emacs shell with default buffername"
   (interactive
-    (list
-      (read-string
-        "buffer name: "
-        (concat "*shell*-" (my-dirname (expand-file-name default-directory)))
-        nil nil)))
+   (let ((i 0)
+         (bufname ""))
+     (while (progn
+              (setq bufname (concat
+                             "*shell*-"
+                             (f-filename default-directory)
+                             (int-to-string i)))
+              (setq i (1+ i))
+              (gnus-buffer-exists-p bufname)))
+     (list (read-string "buffer name: " bufname nil nil))))
   (shell buffername))
 
 ;; http://emacswiki.org/emacs/DeletingWhitespace#toc3
