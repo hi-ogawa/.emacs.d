@@ -67,6 +67,9 @@
 
 (setq lazy-highlight-cleanup nil)
 
+;; NOTE: compiz source included this header, so this is a workaround for it.
+(define-coding-system-alias 'UTF-8 'utf-8)
+
 ;;;;;;;;;;
 ;; elpa ;;
 ;;;;;;;;;;
