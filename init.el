@@ -13,7 +13,7 @@
 ;; less gui component
 (menu-bar-mode -1)
 (tool-bar-mode -1)
-(toggle-scroll-bar -1)
+(scroll-bar-mode t)
 
 ;; no auto save
 (auto-save-mode -1)
