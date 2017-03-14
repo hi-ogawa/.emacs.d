@@ -191,6 +191,9 @@
 (global-set-key (kbd "C-; C-a")
                 (lambda (arg) (interactive "Mopen in atom: ")
                   (call-process-shell-command (concat "atom " arg))))
+(global-set-key (kbd "C-; C-c")
+                (lambda (arg) (interactive "Mopen in vscode: ")
+                  (call-process-shell-command (concat "code-insiders " arg))))
 
 (add-hook 'dired-mode-hook
   (lambda ()

@@ -37,6 +37,7 @@
    (t
     (remove-hook 'before-save-hook 'delete-trailing-whitespace))))
 
+;; need nohup disown things for some desktop application
 (defun my-open-from-dired ()
   "open a file above the cursor in dired-mode"
   (interactive)
