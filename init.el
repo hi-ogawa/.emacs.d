@@ -70,6 +70,10 @@
 ;; NOTE: compiz source included this header, so this is a workaround for it.
 (define-coding-system-alias 'UTF-8 'utf-8)
 
+;; ruby-mode
+(setq ruby-insert-encoding-magic-comment nil)
+
+
 ;;;;;;;;;;
 ;; elpa ;;
 ;;;;;;;;;;
@@ -97,7 +101,6 @@
             (local-set-key (kbd "M-r") 'helm-comint-input-ring)))
 
 (require 'helm-swoop)
-(global-set-key (kbd "C-; C-s") 'helm-swoop)
 
 ;; projectile
 (projectile-global-mode)
@@ -147,7 +150,6 @@
 (require 'coffee-mode)
 
 (require 'magit)
-(global-set-key (kbd "C-; g") 'magit-status)
 
 (require 'dockerfile-mode)
 (require 'docker-tramp)
@@ -164,41 +166,40 @@
 ;; my own custom library
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/non-elpa/my"))
 (require 'my)
-(global-set-key (kbd "C-; C-t") 'my-open-shell-shortcut)
 (my-delete-trailing-whitespace-mode t)
-(add-hook 'dired-mode-hook
-  (lambda ()
-    (local-set-key (kbd "C-c C-o") 'my-open-from-dired)))
-(global-set-key (kbd "C-; M-!") 'my-sudo-shell-command)
-(global-set-key (kbd "C-; RET") 'my-mark-symbol-at-point)
-(global-set-key (kbd "C-; C-e") 'my-google-symbol-at-point)
 
 
 ;;;;;;;;;;;;
 ;; others ;;
 ;;;;;;;;;;;;
 
-(global-set-key (kbd "C-c t")        'toggle-truncate-lines)
+
+;; Global key bindings
 (global-set-key (kbd "C-<")          'comment-region)
 (global-set-key (kbd "C->")          'uncomment-region)
 (global-set-key (kbd "M-N")          'cua-scroll-up)
 (global-set-key (kbd "M-P")          'cua-scroll-down)
-
 (global-set-key (kbd "M-m") (lambda () (interactive) (call-interactively 'man)))
-(global-set-key (kbd "C-; C-l") (lambda () (interactive) (shell-command "gnome-terminal")))
-(global-set-key (kbd "C-; C-b") 'browse-url)
-(global-set-key (kbd "C-; C-o") 'pop-to-mark-command)
-(global-set-key (kbd "C-; C-a")
-                (lambda (arg) (interactive "Mopen in atom: ")
-                  (call-process-shell-command (concat "atom " arg))))
-(global-set-key (kbd "C-; C-c")
-                (lambda (arg) (interactive "Mopen in vscode: ")
-                  (call-process-shell-command (concat "code-insiders " arg))))
 
+
+;; Prefixed key bindings
+((lambda ()
+  (let ((prefix-key "\C-o")
+        (map (make-sparse-keymap)))
+    (define-key map "b" 'browse-url)
+    (define-key map "e" (lambda (arg) (interactive "Mopen in vscode: ")
+                             (call-process-shell-command (concat "code-insiders " arg))))
+    (define-key map "g" 'magit-status)
+    (define-key map "o" 'pop-to-mark-command)
+    (define-key map "r" 'rotate-frame-clockwise)
+    (define-key map "s" 'my-open-shell-shortcut)
+    (define-key map "t" 'toggle-truncate-lines)
+    (define-key map "w" 'helm-swoop)
+    (global-set-key prefix-key map))))
+
+;; Other key bindings
 (add-hook 'dired-mode-hook
   (lambda ()
     (dired-hide-details-mode)
-    (local-set-key (kbd "-") 'dired-up-directory)))
-
-;; ruby
-(setq ruby-insert-encoding-magic-comment nil)
+    (local-set-key (kbd "-") 'dired-up-directory)
+    (local-set-key (kbd "C-c C-o") 'my-open-from-dired)))
