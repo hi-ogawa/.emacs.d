@@ -184,17 +184,18 @@
 
 ;; Prefixed key bindings
 ((lambda ()
-  (let ((prefix-key "\C-o")
+   (let ((prefix-key (kbd "C-c C-h"))
         (map (make-sparse-keymap)))
-    (define-key map "b" 'browse-url)
-    (define-key map "e" (lambda (arg) (interactive "Mopen in vscode: ")
-                             (call-process-shell-command (concat "code-insiders " arg))))
-    (define-key map "g" 'magit-status)
-    (define-key map "o" 'pop-to-mark-command)
-    (define-key map "r" 'rotate-frame-clockwise)
-    (define-key map "s" 'my-open-shell-shortcut)
-    (define-key map "t" 'toggle-truncate-lines)
-    (define-key map "w" 'helm-swoop)
+    (define-key map (kbd "C-b") 'browse-url)
+    (define-key map (kbd "C-e") (lambda (arg) (interactive "Mopen in vscode: ")
+                                  (call-process-shell-command (concat "code-insiders " arg))))
+    (define-key map (kbd "g") 'magit-status)
+    (define-key map (kbd "C-o") 'pop-to-mark-command)
+    (define-key map (kbd "C-r") 'rotate-frame-clockwise)
+    (define-key map (kbd "C-s") 'my-open-shell-shortcut)
+    (define-key map (kbd "C-t") 'toggle-truncate-lines)
+    (define-key map (kbd "C-w") 'helm-swoop)
+    (define-key map (kbd "RET") 'cua-set-rectangle-mark)
     (global-set-key prefix-key map))))
 
 ;; Other key bindings
